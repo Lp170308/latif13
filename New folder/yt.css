@@ -1,0 +1,194 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Login
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+   body {
+     font-family: 'Poppins', sans-serif;
+   }
+   /* Custom styles to match the screenshot exactly */
+   .login-container {
+     background-color: rgba(10, 26, 42, 0.9);
+     border: 1px solid #1a2a4a;
+     border-radius: 1rem;
+     max-width: 24rem;
+     padding: 2rem;
+     box-shadow: 0 0 12px rgba(42, 122, 154, 0.6);
+   }
+   .login-title {
+     color: white;
+     font-weight: 600;
+     font-size: 1.5rem;
+     text-align: center;
+     margin-bottom: 2rem;
+     text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+   }
+   label {
+     color: white;
+     font-weight: 600;
+     font-size: 0.875rem;
+     margin-bottom: 0.25rem;
+     display: block;
+   }
+   input[type="email"],
+   input[type="password"] {
+     width: 100%;
+     background: transparent;
+     border: none;
+     border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
+     color: white;
+     padding-right: 2rem;
+     font-size: 1rem;
+     outline: none;
+   }
+   input[type="email"]::placeholder,
+   input[type="password"]::placeholder {
+     color: transparent;
+   }
+   input[type="email"]:focus,
+   input[type="password"]:focus {
+     border-bottom-color: white;
+   }
+   .icon-envelope,
+   .icon-lock {
+     position: absolute;
+     right: 0.5rem;
+     top: 2.25rem;
+     color: rgba(255, 255, 255, 0.5);
+   }
+   .checkbox-label {
+     color: white;
+     font-weight: 600;
+     font-size: 0.875rem;
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+   }
+   .checkbox-label input[type="checkbox"] {
+     width: 1rem;
+     height: 1rem;
+     accent-color: #2a7a9a;
+     background: transparent;
+     border: 1px solid white;
+     border-radius: 0.25rem;
+     cursor: pointer;
+   }
+   .forgot-password {
+     color: #e3342f;
+     cursor: pointer;
+     font-weight: 600;
+     margin-left: 0.5rem;
+   }
+   .btn-login {
+     width: 100%;
+     background-color: #2a7a9a;
+     border-radius: 9999px;
+     padding: 0.75rem 0;
+     margin-top: 1rem;
+     color: white;
+     font-weight: 600;
+     font-size: 1.125rem;
+     box-shadow: 0 0 6px rgba(42, 122, 154, 0.8);
+     border: none;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+   }
+   .btn-login:hover {
+     background-color: #3a8ab4;
+   }
+   .account-text {
+     color: rgba(255, 255, 255, 0.7);
+     font-size: 0.875rem;
+     text-align: center;
+     margin-top: 1.5rem;
+   }
+   .account-text span {
+     font-weight: 600;
+     cursor: pointer;
+   }
+   /* Background image styling */
+   .background-image {
+     position: fixed;
+     inset: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     z-index: -10;
+   }
+  </style>
+ </head>
+ <body>
+  <img alt="Blue tech circuit background with glowing keyhole and circuit lines" class="background-image" height="400" src="https://storage.googleapis.com/a1aa/image/75eb87de-2f00-4d5a-8658-771b50f6d586.jpg" width="600"/>
+  <div class="login-container relative mx-auto mt-20">
+   <h1 class="login-title">
+    Please Login
+   </h1>
+   <form id="loginForm" onsubmit="return handleLogin(event)" class="relative">
+    <div class="mb-6 relative">
+     <label for="email">
+      Email
+     </label>
+     <input id="email" placeholder="Email" required="" type="email"/>
+     <i class="fas fa-envelope icon-envelope"></i>
+    </div>
+    <div class="mb-6 relative">
+     <label for="password">
+      Password
+     </label>
+     <input id="password" placeholder="Password" required="" type="password"/>
+     <i class="fas fa-lock icon-lock"></i>
+    </div>
+    <div class="checkbox-label mb-4">
+     <input id="remember" type="checkbox"/>
+     <label for="remember">
+      Remember Me
+     </label>
+     <span class="forgot-password" onclick="forgotPassword()">
+      | Forgot Password
+     </span>
+    </div>
+    <button class="btn-login" type="submit">
+     Log In
+    </button>
+   </form>
+   <p class="account-text">
+    Do you have an Account?
+    <span onclick="createAccount()">
+     Create an Account
+    </span>
+   </p>
+  </div>
+  <script>
+   function handleLogin(event) {
+     event.preventDefault();
+     const email = document.getElementById('email').value;
+     const password = document.getElementById('password').value;
+     const remember = document.getElementById('remember').checked;
+
+     if (!email || !password) {
+       alert('Please fill in both email and password.');
+       return false;
+     }
+
+     alert(`Logging in with\nEmail: ${email}\nPassword: ${'*'.repeat(password.length)}\nRemember Me: ${remember}`);
+
+     return false;
+   }
+
+   function forgotPassword() {
+     alert('Redirecting to password recovery page...');
+   }
+
+   function createAccount() {
+     alert('Redirecting to account creation page...');
+   }
+  </script>
+ </body>
+</html>

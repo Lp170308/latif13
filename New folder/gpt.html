@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio Saya</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+    header {
+      background-color: #282c34;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .profile-img {
+      width: 120px;
+      border-radius: 50%;
+      margin-top: 20px;
+    }
+    main {
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: #ddd;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Halo, Saya Latif Praditya</h1>
+    <img src="https://via.placeholder.com/120" alt="Foto Profil" class="profile-img">
+    <p>Web Developer | UI/UX Designer</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Saya adalah anak pertama dari 3 bersaudara yang tinggal di kota surakarta. Saya masih SMA kelas 2 dan berumur 17 tahun, dan saya suka berolahraga bulutangkis</h2>
+      <p>Saya seorang developer dengan pengalaman dalam pengembangan website dan aplikasi berbasis web. Saya suka
+        <header class="fade-in">
+            <h1>Halo, Saya Latif Praditya</h1>
+            <img src="https://via.placeholder.com/120" alt="Foto Profil" class="profile-img">
+            <p>Web Developer | UI/UX Designer</p>
+          </header>
+          
+          <main>
+            <section class="slide-up">
+              <h2>Tentang Saya</h2>
+              <p>Saya seorang developer dengan pengalaman dalam pengembangan website dan aplikasi web.</p>
+            </section>
+          
+            <section class="slide-up">
+              <h2>kompersasi ukuran file</h2>
+              <div class="projects">
+                <div class="project-card">...</div>
+                ...
+              </div>
+            </section>
+          
+            <section class="slide-up">
+              <h2>Kontak</h2>
+              <p>Email: latifpraditya9@email.com</p>
+              ...
+            </section>
+          </main>
+          
+          <section class="slide-up delay-1">
+            <h2>Tentang Saya</h2>
+            <p>...</p>
+          </section>
+          
+          <section class="slide-up delay-2">
+            <h2>Proyek Saya</h2>
+            <div class="projects">
+              ...
+            </div>
+          </section>
+          
+          <section class="slide-up delay-3">
+            <h2>Kontak</h2>
+            <p>...</p>
+          </section>
+          
+          <section class="slide-up delay-4">
+            <h2>Hubungi Saya</h2>
+            <form action="#" method="POST">
+              <label for="nama">Nama:</label><br>
+              <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required><br><br>
+          
+              <label for="email">Email:</label><br>
+              <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required><br><br>
+          
+              <label for="pesan">Pesan:</label><br>
+              <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan di sini..." required></textarea><br><br>
+          
+              <button type="submit">Kirim</button>
+            </form>
+          </section>
+          

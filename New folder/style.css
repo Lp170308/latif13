@@ -1,0 +1,103 @@
+@import url('https://fonts.google.com/share?selection.family=Roboto:ital,wght@0,100..900;1,100..900');
+
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-sertif;
+}
+
+body {
+    background: #020410;
+}
+
+.header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 12.5%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 16px;
+    color: #e4e4e4;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 30px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: -6px;
+    height: 2px;
+    background: #e4e4e4;
+    border-radius: 5px;
+    transform: translate(10px);
+    opacity: 0;
+    transition: .5s;
+}
+
+.navbar a:hover::after {
+    transform: translateY(0);
+    opacity: 1;
+
+}
+
+.search-bar {
+    width: 250px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #e4e4e4;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #f7f2f2;
+    padding-left: 10px;
+}
+
+.search-bar input::placeholder {
+color: #e4e4e4;
+}
+
+.search-bar button {
+    width: 40px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search-bar button i {
+    font-size: 21px;
+    color: #e4e4e4;
+}
+
+.container {
+    position: absolute;
+    width: 75%;
+    height: 550px;
+    background: url('background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}

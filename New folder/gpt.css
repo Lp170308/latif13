@@ -1,0 +1,250 @@
+/* Reset & dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Header */
+  header {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+    text-align: center;
+    padding: 60px 20px 40px;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin: 20px auto 10px;
+    object-fit: cover;
+  }
+  
+  /* Main content */
+  main {
+    max-width: 960px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+  
+  section {
+    margin-bottom: 50px;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: #4f46e5;
+    margin-bottom: 20px;
+    border-left: 5px solid #4f46e5;
+    padding-left: 15px;
+  }
+  
+  /* Projects */
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+  }
+  
+  .project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .project-card h3 {
+    margin-bottom: 10px;
+    color: #1f2937;
+  }
+  
+  .project-card p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  /* Contact */
+  section p {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #e2e8f0;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  /* Animasi Fade In */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Animasi Slide Up + Fade */
+  @keyframes slideUpFade {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Kelas animasi */
+  .fade-in {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+  }
+  
+  .slide-up {
+    animation: slideUpFade 1s ease forwards;
+    opacity: 0;
+  }
+  
+  /* Animasi Fade In */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Animasi Slide Up + Fade */
+  @keyframes slideUpFade {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Kelas animasi */
+  .fade-in {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+  }
+  
+  .slide-up {
+    animation: slideUpFade 1s ease forwards;
+    opacity: 0;
+  }
+  
+  /* ➕ Delay Opsional */
+  .slide-up.delay-1 { animation-delay: 0.2s; }
+  .slide-up.delay-2 { animation-delay: 0.4s; }
+  .slide-up.delay-3 { animation-delay: 0.6s; }
+  
+  form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    max-width: 500px;
+  }
+  
+  form label {
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  button {
+    background-color: #4f46e5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #4338ca;
+  }
+  
+  /* Scroll animation - sembunyi dulu */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+  }
+  
+  /* Saat elemen masuk ke viewport */
+  .scroll-animate.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  <section class="scroll-animate">
+  <h2>Tentang Saya</h2>
+  <p>...</p>
+</section>
+
+<section class="scroll-animate">
+  <h2>Proyek Saya</h2>
+  ...
+</section>
+
+<section class="scroll-animate">
+  <h2>Hubungi Saya</h2>
+  ...
+</section>
+
+<script>
+  const scrollElements = document.querySelectorAll('.scroll-animate');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target); // supaya animasi hanya sekali
+      }
+    });
+  }, {
+    threshold: 0.1 // mulai muncul saat 10% masuk layar
+  });
+
+  scrollElements.forEach(el => observer.observe(el));
+</script>
